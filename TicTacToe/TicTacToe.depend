@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1528421418 source:/home/miles/CodeBlocksProjects/TicTacToe/main.cpp
+	<iostream>
+	<string>
+	"GameBoard.h"
+	"PlayerData.h"
+
+1528412212 /home/miles/CodeBlocksProjects/TicTacToe/include/GameBoard.h
+
+1528472113 source:/home/miles/CodeBlocksProjects/TicTacToe/src/GameBoard.cpp
+	"GameBoard.h"
+	<iostream>
+
+1528304879 source:/home/miles/CodeBlocksProjects/TicTacToe/src/PlayerData.cpp
+	"PlayerData.h"
+	<iostream>
+
+1528304879 /home/miles/CodeBlocksProjects/TicTacToe/include/PlayerData.h
+	<string>
+
