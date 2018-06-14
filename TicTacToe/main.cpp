@@ -7,6 +7,7 @@ using namespace std;
 
 void initGame(PlayerData &player1, PlayerData &player2, GameBoard &board);
 void simGame(PlayerData &player1, PlayerData &player2, GameBoard &board);
+bool rematch();
 
 int main()
 {
@@ -49,10 +50,8 @@ void initGame(PlayerData &player1, PlayerData &player2, GameBoard &board)
 void simGame(PlayerData &player1, PlayerData &player2, GameBoard &board)
 {
     bool win = false;
-    //bool tie = false;
-    char playAgain;
 
-   while (1)
+    while (true)
     {
         cout << player1.getName() << "'s Turn\n";
         board.setBoard(player1.getSymbol()); //player 1 goes first
@@ -61,47 +60,26 @@ void simGame(PlayerData &player1, PlayerData &player2, GameBoard &board)
         if (win == true)
         {
             cout << "*** " << player1.getName() << " WINS!***" << endl;
-            cout << "Play again? Enter Y for Yes or N for No: ";
-            cin >> playAgain;
-            while (playAgain != 'Y' && playAgain != 'y' && playAgain != 'N' && playAgain != 'n')
+            if (rematch() == true)
             {
-                cout << "\nCould not understand that! Enter Y for Yes or N for No: ";
-                cin >> playAgain;
-            }
-            if (playAgain == 'Y' || playAgain == 'y')
-            {
-                cout << "\nRestarting..." << endl << endl;
                 board.cleanBoard();
                 continue;
             }
-            else
-            {
-                cout << "\nTHANKS FOR PLAYING\n";
+            else{
                 break;
             }
-
         }
 
         //Check for tie
         if (board.checkTie() == true)
         {
-            cout << "\nLooks like a Draw!\n";
-            cout << "Play again? Enter Y for Yes or N for No: ";
-            cin >> playAgain;
-            while (playAgain != 'Y' && playAgain != 'y' && playAgain != 'N' && playAgain != 'n')
+            cout << "\nDRAW!\n";
+            if (rematch() == true)
             {
-                cout << "\nCould not understand that! Enter Y for Yes or N for No: ";
-                cin >> playAgain;
-            }
-            if (playAgain == 'Y' || playAgain == 'y')
-            {
-                cout << "\nRestarting..." << endl << endl;
                 board.cleanBoard();
                 continue;
             }
-            else
-            {
-                cout << "\nTHANKS FOR PLAYING\n";
+            else{
                 break;
             }
         }
@@ -113,22 +91,12 @@ void simGame(PlayerData &player1, PlayerData &player2, GameBoard &board)
         if (win == true)
         {
             cout << "*** " << player2.getName() << " WINS!***" << endl;
-            cout << "Play again? Enter Y for Yes or N for No: ";
-            cin >> playAgain;
-            while (playAgain != 'Y' && playAgain != 'y' && playAgain != 'N' && playAgain != 'n')
+            if (rematch() == true)
             {
-                cout << "\nCould not understand that! Enter Y for Yes or N for No: ";
-                cin >> playAgain;
-            }
-            if (playAgain == 'Y' || playAgain == 'y')
-            {
-                cout << "\nRestarting..." << endl << endl;
                 board.cleanBoard();
                 continue;
             }
-            else
-            {
-                cout << "\nTHANKS FOR PLAYING\n";
+            else{
                 break;
             }
         }
@@ -136,26 +104,38 @@ void simGame(PlayerData &player1, PlayerData &player2, GameBoard &board)
         //Check for tie
         if (board.checkTie() == true)
         {
-            cout << "\nLooks like a Draw!\n";
-            cout << "Play again? Enter Y for Yes or N for No: ";
-            cin >> playAgain;
-            while (playAgain != 'Y' && playAgain != 'y' && playAgain != 'N' && playAgain != 'n')
+            cout << "\nDRAW!\n";
+            if (rematch() == true)
             {
-                cout << "\nCould not understand that! Enter Y for Yes or N for No: ";
-                cin >> playAgain;
-            }
-            if (playAgain == 'Y' || playAgain == 'y')
-            {
-                cout << "\nRestarting..." << endl << endl;
                 board.cleanBoard();
                 continue;
             }
-            else
-            {
-                cout << "\nTHANKS FOR PLAYING\n";
+            else{
                 break;
             }
         }
     }
 
+}
+
+bool rematch()
+{
+    char playAgain;
+    cout << "\nPlay again? Enter Y for Yes or N for No: ";
+    cin >> playAgain;
+    while (playAgain != 'Y' && playAgain != 'y' && playAgain != 'N' && playAgain != 'n')
+    {
+        cout << "\nCould not understand that! Enter Y for Yes or N for No: ";
+        cin >> playAgain;
+    }
+    if (playAgain == 'Y' || playAgain == 'y')
+    {
+        cout << "\nRestarting..." << endl << endl;
+        return true;
+    }
+    else
+    {
+        cout << "\nTHANKS FOR PLAYING\n";
+        return false;
+    }
 }
