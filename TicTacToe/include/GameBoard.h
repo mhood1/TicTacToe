@@ -14,9 +14,15 @@ class GameBoard
 
         void setBoard(char symbol);
 
+        void setBoard(int x, int y, char symbol);
+
+        char getVal(int x, int y);
+
         bool checkWin();
 
         bool checkTie();
+
+        bool notEmpty();
 
     private:
         char _board[3][3] ={{' ', ' ', ' '},

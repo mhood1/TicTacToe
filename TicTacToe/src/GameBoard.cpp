@@ -62,8 +62,6 @@ void GameBoard::setBoard(char symbol)
         cin >> y;
     }
 
-
-
     if (_board[x-1][y-1] != ' ')
     {
         occupied = true;
@@ -86,6 +84,17 @@ void GameBoard::setBoard(char symbol)
     _board[x-1][y-1] = symbol;
 
     cout << endl;
+}
+
+//Used for AI
+void GameBoard::setBoard(int x, int y, char symbol)
+{
+    _board[x][y] = symbol;
+}
+
+char GameBoard::getVal(int x, int y)
+{
+    return _board[x][y];
 }
 
 bool GameBoard::checkWin()
@@ -214,4 +223,20 @@ void GameBoard::cleanBoard()
         }
     }
     renderBoard();
+}
+
+bool GameBoard::notEmpty()
+{
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            if (_board[i][j] != ' ')
+            {
+                return true;
+            }
+        }
+    }
+    return false;
+
 }

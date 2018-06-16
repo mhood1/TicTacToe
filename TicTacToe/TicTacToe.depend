@@ -18,22 +18,34 @@
 1528304879 /home/miles/CodeBlocksProjects/TicTacToe/include/PlayerData.h
 	<string>
 
-1528421418 source:/home/miles/Documents/TicTacToe/TicTacToe/main.cpp
+1529170320 source:/home/miles/Documents/TicTacToe/TicTacToe/main.cpp
 	<iostream>
 	<string>
 	"GameBoard.h"
 	"PlayerData.h"
+	"AI.h"
 
-1528412212 /home/miles/Documents/TicTacToe/TicTacToe/include/GameBoard.h
+1529101200 /home/miles/Documents/TicTacToe/TicTacToe/include/GameBoard.h
 
-1528304879 /home/miles/Documents/TicTacToe/TicTacToe/include/PlayerData.h
+1529170136 /home/miles/Documents/TicTacToe/TicTacToe/include/PlayerData.h
+	"GameBoard.h"
 	<string>
 
-1528473295 source:/home/miles/Documents/TicTacToe/TicTacToe/src/GameBoard.cpp
+1529101200 source:/home/miles/Documents/TicTacToe/TicTacToe/src/GameBoard.cpp
 	"GameBoard.h"
 	<iostream>
 
-1528304879 source:/home/miles/Documents/TicTacToe/TicTacToe/src/PlayerData.cpp
+1529170136 source:/home/miles/Documents/TicTacToe/TicTacToe/src/PlayerData.cpp
 	"PlayerData.h"
 	<iostream>
+	<vector>
+
+1529170538 source:/home/miles/Documents/TicTacToe/TicTacToe/src/AI.cpp
+	"AI.h"
+	<vector>
+
+1529170538 /home/miles/Documents/TicTacToe/TicTacToe/include/AI.h
+	"GameBoard.h"
+	"PlayerData.h"
+	<string>
 

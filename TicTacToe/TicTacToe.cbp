@@ -34,9 +34,11 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/AI.h" />
 		<Unit filename="include/GameBoard.h" />
 		<Unit filename="include/PlayerData.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/AI.cpp" />
 		<Unit filename="src/GameBoard.cpp" />
 		<Unit filename="src/PlayerData.cpp" />
 		<Extensions>

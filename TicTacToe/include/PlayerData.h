@@ -1,7 +1,9 @@
 #ifndef PLAYERDATA_H
 #define PLAYERDATA_H
 
+#include "GameBoard.h"
 #include <string>
+
 
 using namespace std;
 
@@ -14,6 +16,7 @@ class PlayerData
         void setAttributes(string name, char symbol);
 
         string getName();
+
         char getSymbol();
 
         void printAttributes();
