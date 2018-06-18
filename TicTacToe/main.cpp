@@ -57,9 +57,9 @@ void initSingleplayer(PlayerData &player1, AI &aiPlayer, GameBoard &board)
 
     cout << "Enter a name for the CPU: ";
     cin >> aiName;
-    cout << "Choose a symbol for player 2: ";
+    cout << "Choose a symbol for the CPU: ";
     cin >> aiSymbol;
-    aiPlayer.setAttributes(aiName, aiSymbol);
+    aiPlayer.setAttributes(aiName, aiSymbol, p1Symbol);
     cout << endl << endl;
 
 }
@@ -126,10 +126,7 @@ void simSingleplayer(PlayerData &player1, AI &aiPlayer, GameBoard &board)
         }
 
         cout << aiPlayer.getName() << "'s Turn\n";
-        /** FIXME
-        AiMove bestMove = player2.getBestMove(board, player2);
-        board.setBoard(bestMove.x, bestMove.y, player2.getSymbol());
-        **/
+        aiPlayer.performMove(board);
         board.renderBoard();
         win = board.checkWin();
         if (win == true)

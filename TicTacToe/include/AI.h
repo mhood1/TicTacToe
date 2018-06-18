@@ -10,12 +10,11 @@ using namespace std;
 struct AiMove
 {
     AiMove () {};
-    AiMove(int Score) : score(Score) {};
+    AiMove(int Score) : score(Score) {}
     int x;
     int y;
     int score;
 };
-
 
 class AI
 {
@@ -24,15 +23,18 @@ class AI
 
         string getName();
 
-        void setAttributes(string name, char symbol);
+        //char getSymbol();
 
-        AiMove getBestMove(GameBoard &board, int player);
+        void setAttributes(string name, char aiSymbol, char humanSymbol);
+
+        void performMove(GameBoard &board);
+
+        AiMove getBestMove(GameBoard &board, char player);
 
     private:
         string _name;
-        char _symbol;
-        int _human;
-        int _ai;
+        char _human; //symbol that human chose for the game
+        char _ai; //AI's board symbol
 };
 
 #endif // AI_H
